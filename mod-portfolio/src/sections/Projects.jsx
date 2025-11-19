@@ -1,5 +1,5 @@
 import gsap from 'gsap';
-import { useGsap } from '@gsap/react'
+import { useGSAP } from '@gsap/react'
 import { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import {Center, OrbitControls } from '@react-three/drei';
@@ -7,6 +7,8 @@ import {Center, OrbitControls } from '@react-three/drei';
 import { myProjects } from '../constants/index.js';
 import CanvasLoader from '../components/Loading.jsx';
 import DemoComputer from '../components/DemoComputer.jsx';
+
+gsap.registerPlugin(useGSAP);
 
 const projectCount = myProjects.length;
 
@@ -23,7 +25,7 @@ const Projects = () => {
         });
     };
 
-    useGsap(() => {
+    useGSAP(() => {
         gsap.fromTo(`.animatedText`, { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.2, ease: 'power2.inOut' });
     }, [selectedProjectIndex]);
 
