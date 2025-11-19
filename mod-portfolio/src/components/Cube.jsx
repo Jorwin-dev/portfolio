@@ -1,7 +1,9 @@
 import gsap from 'gsap';
-import { useGsap } from '@gsap/react'
+import { useGSAP } from '@gsap/react'
 import { useRef, useState } from 'react';
 import { Float, useGLTF, useTexture } from '@react-three/drei';
+
+gsap.registerPlugin(useGSAP);
 
 const Cube = ({ ...props }) => {
     const { nodes } = useGLTF('/models/cube.glb');
@@ -9,7 +11,7 @@ const Cube = ({ ...props }) => {
     const cubeRef = useRef();
     const [hovered, setHovered] = useState(false);
 
-    useGsap(() => {
+    useGSAP(() => {
         gsap
             .timeline({
                 repeat: -1,
