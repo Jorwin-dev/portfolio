@@ -3,6 +3,8 @@ import { Center, useTexture } from '@react-three/drei';
 import gsap from 'gsap';
 import { useCallback, useRef } from 'react';
 
+gsap.registerPlugin(useGSAP);
+
 const Rings = ({ position }) => {
   const refList = useRef([]);
   const getRef = useCallback((mesh) => {
